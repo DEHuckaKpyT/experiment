@@ -56,11 +56,12 @@ class EntityFillerTest {
         //Act
         ExtendedTestModel model = EntityFiller.forClass(ExtendedTestModel.class)
                                               .withBigText("longName")
+                                              .withStartIntValue(1001)
                                               .generate();
 
         //Assert
-        softly.assertThat(model.getCount()).isEqualTo(1);
-        softly.assertThat(model.getOtherCount()).isEqualTo(2);
+        softly.assertThat(model.getCount()).isEqualTo(1001);
+        softly.assertThat(model.getOtherCount()).isEqualTo(1002);
         softly.assertThat(model.getName()).isEqualTo("text1");
         softly.assertThat(model.getLongName()).isEqualTo("big text big text big text big text big text big text big text big text big text big text big text big text2");
         softly.assertThat(model.getDate()).isEqualTo(firstDate);
@@ -87,7 +88,7 @@ class EntityFillerTest {
     }
 
     @Test
-    void generateListDefault(SoftAssertions softly){
+    void generateListDefault(SoftAssertions softly) {
         //Act
         List<ExtendedTestModel> models = EntityFiller.forClass(ExtendedTestModel.class).generateList();
 
@@ -125,7 +126,7 @@ class EntityFillerTest {
     }
 
     @Test
-    void generateOtherClass(SoftAssertions softly){
+    void generateOtherClass(SoftAssertions softly) {
         //Act & Assert
         Exception exception = assertThrows(RuntimeException.class, () -> {
             ExtendedTestModel model = EntityFiller.forClass(TestModel.class).generate();

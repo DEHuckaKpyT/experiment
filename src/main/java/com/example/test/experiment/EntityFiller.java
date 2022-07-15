@@ -22,9 +22,9 @@ public class EntityFiller {
     private final int DEFAULT_FIRST_STEP = 0;
     private final int DEFAULT_STEP_VALUE = 1;
     private final int DEFAULT_LIST_ITEMS_COUNT = 10;
-    private final String DEFAULT_TEXT = "text";
+    private String DEFAULT_TEXT = "text";
     private final String DEFAULT_BIG_TEXT = "big text big text big text big text big text big text big text big text big text big text big text big text";
-    private final int START_INT_VALUE = 1;
+    private int START_INT_VALUE = 1;
     private final int START_STRING_VALUE = 1;
     private final double START_DOUBLE_VALUE = 1.0 / 3.0;
     private final Calendar START_DATE = new GregorianCalendar(2001, Calendar.JANUARY, 1);
@@ -96,7 +96,11 @@ public class EntityFiller {
 
     public EntityFiller withBigText(String... fieldNames) {
         this.fieldsWithBigText = fieldNames;
+        return this;
+    }
 
+    public EntityFiller withStartIntValue(int value) {
+        this.START_INT_VALUE = value;
         return this;
     }
 
