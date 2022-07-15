@@ -17,4 +17,5 @@ public class TestModel {
     String name;
     Integer count;
     Date date;
+    Double percent;
 }

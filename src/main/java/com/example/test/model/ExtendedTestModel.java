@@ -12,7 +12,7 @@ import java.util.Date;
  */
 @Value
 @Builder
-public class SecondTestModel {
+public class ExtendedTestModel {
 
     String name;
     String longName;
@@ -20,4 +20,6 @@ public class SecondTestModel {
     Integer otherCount;
     Date date;
     Date otherDate;
+    Double percent;
+    Double otherPercent;
 }
