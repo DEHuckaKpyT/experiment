@@ -22,4 +22,6 @@ public class ExtendedTestModel {
     Date otherDate;
     Double percent;
     Double otherPercent;
+    Boolean flag;
+    Boolean otherFlag;
 }

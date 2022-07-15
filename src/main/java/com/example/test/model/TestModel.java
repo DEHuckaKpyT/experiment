@@ -18,4 +18,5 @@ public class TestModel {
     Integer count;
     Date date;
     Double percent;
+    Boolean flag;
 }
